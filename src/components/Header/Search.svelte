@@ -1,7 +1,11 @@
 <script>
+  let filter = (event) => {
+    console.log(event.target.value)
+  }
 </script>
 
 <input 
+  on:keyup={filter}
   class="nav-search" 
   type="text"
   placeholder="Pesquise aqui ou abra o Cardápio -->"
