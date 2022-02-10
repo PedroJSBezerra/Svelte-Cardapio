@@ -11,6 +11,7 @@
   export let link
   export let linkList
   //Functions
+  let query
   let open = false
   let toggle = () => open = !open
 

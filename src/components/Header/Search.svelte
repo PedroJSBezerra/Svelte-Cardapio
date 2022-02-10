@@ -1,11 +1,19 @@
 <script>
-  let filter = (event) => {
-    console.log(event.target.value)
-  }
+  import { filteredItems, items } from '../../store'
+  export let search = (event) => {
+  let query = event.target.value
+  const filteredItem = items.filter(item => {
+    return (
+      item.name.toLowerCase().includes(query.toLowerCase()) ||
+      item.description.toLowerCase().includes(query.toLowerCase())
+    )
+  })
+  filteredItems.set(filteredItem)
+}
 </script>
 
 <input 
-  on:keyup={filter}
+  on:keyup={search}
   class="nav-search" 
   type="text"
   placeholder="Pesquise aqui ou abra o Cardápio -->"

@@ -1,90 +1,24 @@
 <script>
-  let items = [
-    {
-      imgUrl: "",
-      name: "Pizza de Calabreza",
-      prices: [
-        {
-          size: "P",
-          price: "13",
-        },
-        {
-          size: "M",
-          price: "18",
-        },
-        {
-          size: "G",
-          price: "22",
-        },
-      ],
-      description: "Molho de tomate, mussarela, calabresa, cebola e orégano."
-    },
-    {
-      imgUrl: "",
-      name: "Pizza de frango",
-      prices: [
-        {
-          size: "P",
-          price: "13",
-        },
-        {
-          size: "M",
-          price: "18",
-        },
-        {
-          size: "G",
-          price: "22",
-        },
-      ],
-      description: "Molho de tomate, mussarela, calabresa, cebola e orégano."
-    },
-    {
-      imgUrl: "",
-      name: "Pizza Portugueza",
-      prices: [
-        {
-          size: "P",
-          price: "13",
-        },{
-          size: "M",
-          price: "18",
-        },{
-          size: "G",
-          price: "22",
-        },
-      ],
-      description: "Molho de tomate, mussarela, calabresa, cebola e orégano."
-    },
-  ]
+  import { filteredItems } from "../store"
 </script>
 
 <h1>Cardápio</h1>
 <ul class="list">
-
-  {#each items as item}
+  {#each $filteredItems as item}
     <li class="item">
-      
       <h3 class="item__name">{item.name}</h3>
-      
       <img class="item__image" src={item.imgUrl} alt="">
-
       <div class="item__info">
-
         {#each item.prices as item}
           <div class="price">
             <p class="price__size">{item.size}</p>
             <p class="price__price">{item.price},00</p>
           </div>
         {/each}
-
         <p class="description">{item.description}</p>
-      
       </div>
-    
-    
     </li>
   {/each}
-
 </ul>
 
 <style lang="scss">
