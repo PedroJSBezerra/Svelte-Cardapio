@@ -6,12 +6,11 @@
   import Button from './Button.svelte'
   import Menu from './Menu.svelte'
   //Images
-  import logo from '../../logomarca-restaurante-japones.jpg'
+  import logo from '../../media/logomarca-restaurante-japones.jpg'
   //External vars
   export let link
   export let linkList
   //Functions
-  let query
   let open = false
   let toggle = () => open = !open
 

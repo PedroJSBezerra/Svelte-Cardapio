@@ -1,21 +1,22 @@
 <script>
   import { filteredItems } from "../store"
+  import pizza from '../media/pizza__noimg.jpg'
 </script>
 
-<h1>Cardápio</h1>
 <ul class="list">
+  <h2>Cardápio</h2>
   {#each $filteredItems as item}
     <li class="item">
       <h3 class="item__name">{item.name}</h3>
-      <img class="item__image" src={item.imgUrl} alt="">
+      <span class="item__image" style="background: url({pizza});" alt=""></span>
       <div class="item__info">
-        {#each item.prices as item}
+        {#each item.variant as item}
           <div class="price">
-            <p class="price__size">{item.size}</p>
+            <p class="price__size">{item.name}</p>
             <p class="price__price">{item.price},00</p>
           </div>
         {/each}
-        <p class="description">{item.description}</p>
+        <p class="description">{item.ingredients}</p>
       </div>
     </li>
   {/each}
@@ -34,12 +35,14 @@
       }
       
       &__name {
+        text-transform: capitalize;
         width: 100%;
       }
 
       &__image {
         width: 150px;
         height: 150px;
+        background-size: cover !important;
       }
 
       &__info {

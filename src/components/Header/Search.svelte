@@ -1,15 +1,6 @@
 <script>
-  import { filteredItems, items } from '../../store'
-  export let search = (event) => {
-  let query = event.target.value
-  const filteredItem = items.filter(item => {
-    return (
-      item.name.toLowerCase().includes(query.toLowerCase()) ||
-      item.description.toLowerCase().includes(query.toLowerCase())
-    )
-  })
-  filteredItems.set(filteredItem)
-}
+  import { search } from '../../store'
+
 </script>
 
 <input 
