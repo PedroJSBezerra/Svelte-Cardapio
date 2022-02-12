@@ -1,44 +1,15 @@
 <script>
   // Libs
-  import Router, { link } from 'svelte-spa-router'
+  import Router from 'svelte-spa-router'
+  import { routes } from './pages/routes'
   // Components
   import Header from "./components/Header/_index.svelte"
   import Main from "./components/Main.svelte"
   import Footer from "./components/Footer.svelte"
-  // Pages Routing
-  import Home from "./pages/Home.svelte"
-  import Cardapio from "./pages/Cardapio.svelte"
-  import Quemsomos from "./pages/Quemsomos.svelte"
-  import Contato from "./pages/Contato.svelte"
-  // Vars
-  let linkList = [
-    {
-      name: "Início",
-      url: "/"
-    },
-    {
-      name: "Cardápio",
-      url: "/cardapio"
-    },
-    {
-      name: "Quem Somos",
-      url: "/quemsomos"
-    },
-    {
-      name: "Contato",
-      url: "/contato"
-    },
-  ]
-  let routes = {
-    '/': Home,
-    '/cardapio': Cardapio,
-    '/quemsomos': Quemsomos,
-    '/contato': Contato,
-  }
 </script>
 
 <div class="app">
-  <Header {link} {linkList}/>
+  <Header/>
   <Main>
     <Router routes={routes} />
   </Main>

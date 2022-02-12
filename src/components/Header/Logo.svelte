@@ -1,10 +1,16 @@
 <script>
-  export let link
-  export let logo
-  import { logoHide } from '../../store'
+  //imports
+  import { link } from 'svelte-spa-router'
+  import { location } from 'svelte-spa-router'
+  //Images
+  import logo from '../../media/logomarca-restaurante-japones.jpg'
+  //vars
+  let logoHide = false
+  //functions
+  $: ($location == '/cardapio')? logoHide = true : logoHide = false
 </script>
 
-<a class={$logoHide? "logo --hidden":"logo"} use:link href="/">
+<a class={logoHide? "logo --hidden":"logo"} use:link href="/">
   <img class="logo__image" src={logo} href="/" alt="">
 </a>
 

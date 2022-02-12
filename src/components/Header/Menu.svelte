@@ -1,14 +1,17 @@
 <script>
-  export let link
-  export let linkList
-  export let open
-  export let toggle
+  import { link } from 'svelte-spa-router'
+  import { linkList } from '../../pages/routes'
+  import { menuOpen, setMenu} from '../../store'
+  
+  const menu = () => {
+    setMenu(false)
+  }
 </script>
 
-<ul class={open? "nav-menu --open":"nav-menu"} on:click={toggle}>
+<ul class={$menuOpen? "nav-menu --open":"nav-menu"} on:click={menu}>
   {#each linkList as item}
     <li class="item">
-      <a tabindex={!open? 1:0} class="item__link" use:link href={item.url}>{item.name}</a>
+      <a tabindex={!menuOpen? 1:0} class="item__link" use:link href={item.url}>{item.name}</a>
     </li>
   {/each}
 </ul>

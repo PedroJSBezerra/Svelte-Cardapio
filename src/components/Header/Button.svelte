@@ -1,9 +1,11 @@
 <script>
-  export let open
-  export let toggle
+  import { menuOpen, setMenu } from '../../store'
+  const menuToggle = () => {
+    setMenu(!$menuOpen)
+  }
 </script>
 
-<div class={open? "nav-button --open":"nav-button"} on:click={toggle} tabindex="0">
+<div class={$menuOpen? "nav-button --open":"nav-button"} on:click={menuToggle} tabindex="0">
   <span/>
   <span/>
   <span/>

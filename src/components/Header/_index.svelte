@@ -5,24 +5,16 @@
   import Search from './Search.svelte'
   import Button from './Button.svelte'
   import Menu from './Menu.svelte'
-  //Images
-  import logo from '../../media/logomarca-restaurante-japones.jpg'
-  //External vars
-  export let link
-  export let linkList
-  //Functions
-  let open = false
-  let toggle = () => open = !open
 
 </script>
 
 <header class="header">
-  <Logo {logo} {link}/>
-  <Nav {open}>
+  <Logo />
+  <Nav >
     <Search />
-    <Button {open} {toggle} />
-  </Nav>
-  <Menu {link} {linkList} {open} {toggle} />
+    <Button />
+  </Nav >
+  <Menu />
 </header>
 
 <style lang="scss">

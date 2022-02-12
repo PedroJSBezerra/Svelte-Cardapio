@@ -1,29 +1,18 @@
 <script>
-  import { filteredItems, logoHide } from '../../store'
+  import { search, setMenu } from '../../store'
   import { push } from 'svelte-spa-router'
-  import { pizzas as data } from '../../pizzas'
-
-  let search = (event) => {
-    let query = event.target.value
-
-    const filteredItem = data.filter(item => {
-      return (
-        item.name.toLowerCase().includes(query.toLowerCase()) ||
-        item.ingredients.toLowerCase().includes(query.toLowerCase())
-      )
-    })
-    
-    filteredItems.set(filteredItem)
-  }
-
-  const focusin = () => {
-    logoHide.set(true)
+  // import { location } from 'svelte-spa-router'
+  
+  export const focusin = () => {
+    setMenu(false)
     //router navigate to path
     push("/cardapio")
   }
-  const focusout = () => {
-    logoHide.set(false)
+  
+  export const focusout = (event) => {
+    // if($location != 'cardapio') event.target.value = ''
   }
+
 </script>
 
 <input 

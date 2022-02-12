@@ -1,8 +1,8 @@
 <script>
-  export let open
+  import { menuOpen } from '../../store'
 </script>
 
-<nav class={open? "nav --open":"nav"}>
+<nav class={menuOpen? "nav --open":"nav"}>
   <slot><!-- optional fallback --></slot>
 </nav>
 
