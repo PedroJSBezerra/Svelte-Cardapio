@@ -17,7 +17,7 @@
 </script>
 
 <header class="header">
-  <Logo {logo} {open} {link}/>
+  <Logo {logo} {link}/>
   <Nav {open}>
     <Search />
     <Button {open} {toggle} />

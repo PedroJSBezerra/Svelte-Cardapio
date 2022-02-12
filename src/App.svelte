@@ -38,7 +38,7 @@
 </script>
 
 <div class="app">
-  <Header {link}{linkList}/>
+  <Header {link} {linkList}/>
   <Main>
     <Router routes={routes} />
   </Main>

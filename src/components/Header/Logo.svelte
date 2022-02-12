@@ -1,10 +1,10 @@
 <script>
   export let link
   export let logo
-  export let open
+  import { logoHide } from '../../store'
 </script>
 
-<a class={open? "logo --hidden":"logo"} use:link href="/">
+<a class={$logoHide? "logo --hidden":"logo"} use:link href="/">
   <img class="logo__image" src={logo} href="/" alt="">
 </a>
 
